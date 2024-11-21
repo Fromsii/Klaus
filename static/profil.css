@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4; /* Hintergrundfarbe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.navbar {
+    width: 100%;
+    padding: 20px;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+}
+
+.content {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.profile-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.profile-info p {
+    margin-bottom: 10px;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+}
+
+.profile-info .btn, .edit-form .btn, .btn-logout, .btn-cancel {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-info .btn {
+    background-color: #007bff;
+}
+
+.profile-info .btn:hover, .edit-form .btn:hover {
+    background-color: #0056b3;
+}
+
+.edit-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: none; /* Initially hidden */
+}
+
+.edit-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.edit-form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+}
+
+.edit-form .btn {
+    background-color: #007bff;
+}
+
+.btn-logout {
+    background-color: #ff6347;
+}
+
+.btn-logout:hover {
+    background-color: #e55337;
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+}

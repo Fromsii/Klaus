@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dateien hochladen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Meine Webseite</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('profil') }}">Profil</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Registrieren</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Dateien hochladen</h1>
+        <div class="upload-form">
+            <form method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+                <label for="file">Datei wählen:</label>
+                <input type="file" id="file" name="file" required><br><br>
+                <label for="description">Beschreibung:</label>
+                <textarea id="description" name="description" rows="4" required></textarea><br><br>
+                <button type="submit" class="btn">Hochladen</button>
+            </form>
+        </div>
+        <div class="uploaded-files">
+            <h2>Hochgeladene Dateien</h2>
+            <ul>
+                {% for file in files %}
+                <li>
+                    <a href="{{ url_for('file_detail', filename=file.name) }}">{{ file.name }}</a><br>
+                    <strong>Hochgeladen von:</strong> {{ file.uploader }}<br>
+                    <strong>Hochgeladen am:</strong> {{ file.upload_date }}<br>
+                    <strong>Beschreibung:</strong> {{ file.description }}<br>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details zur Datei</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Meine Webseite</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('profil') }}">Profil</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Registrieren</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Details zur Datei</h1>
+        <div class="file-details">
+            <p><strong>Datei:</strong> {{ file[1] }}</p>
+            <p><strong>Hochgeladen von:</strong> {{ file[2] }}</p>
+            <p><strong>Hochgeladen am:</strong> {{ file[3] }}</p>
+            <p><strong>Beschreibung:</strong> {{ file[4] }}</p>
+            <a href="{{ url_for('static', filename='uploads/' ~ file[1]) }}" download class="btn">Download</a>
+        </div>
+    </div>
+</body>
+</html>
